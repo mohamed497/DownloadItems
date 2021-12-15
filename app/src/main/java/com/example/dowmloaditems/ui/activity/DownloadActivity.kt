@@ -179,7 +179,7 @@ class DownloadActivity : AppCompatActivity() {
         remoteView.setTextViewText(R.id.tv_notif_title, GlobalConstants.DOWNLOADING_NOTIFICATION)
         remoteView.setProgressBar(
             R.id.pb_notif,
-            90,
+            GlobalConstants.MAX_PROGRESS,
             item.progress,
             false
         )
