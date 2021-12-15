@@ -46,17 +46,23 @@ class DownloadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        notificationManager =
-            this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-         notificationBuilder =
-            NotificationCompat.Builder(globalContext, GlobalConstants.NOTIFICATION_CHANNEL)
-
-        remoteView = RemoteViews(globalContext.packageName, R.layout.custom_notif)
-        remoteView.setImageViewResource(R.id.iv_notif, R.drawable.ic_launcher_background)
+        setupNotificationManager()
+        setupRemoteView()
 
         setContentView(R.layout.activity_download)
         setupRecyclerview()
 
+    }
+    private fun setupNotificationManager(){
+        notificationManager =
+            this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationBuilder =
+            NotificationCompat.Builder(globalContext, GlobalConstants.NOTIFICATION_CHANNEL)
+    }
+    private fun setupRemoteView(){
+
+        remoteView = RemoteViews(globalContext.packageName, R.layout.custom_notif)
+        remoteView.setImageViewResource(R.id.iv_notif, R.drawable.ic_launcher_background)
     }
 
 /*    private fun observeOnAlbums(item: Item) {
@@ -103,7 +109,7 @@ class DownloadActivity : AppCompatActivity() {
             item.isDownloading -> {
             }
 //            item.file.exists() -> openFile(item.file)
-            item.file.exists() -> setupToast("File Already Downloaded")
+            item.file.exists() -> setupToast(getString(R.string.downloaded))
             else -> {
                 try {
                     runtimePermission.requestPermission(listOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),

@@ -2,5 +2,6 @@
     <string name="app_name">Download Item</string>
     <string name="work_permission">need Permission of Storage</string>
     <string name="downloading_error">Error while downloading"</string>
+    <string name="downloaded">File Already Downloaded"</string>
 
 </resources>
