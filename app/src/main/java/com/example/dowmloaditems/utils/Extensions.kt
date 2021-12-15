@@ -1,19 +1,11 @@
 package com.example.dowmloaditems.utils
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.webkit.MimeTypeMap
-import android.widget.RemoteViews
-import androidx.core.app.NotificationCompat
 import androidx.core.content.FileProvider
-import com.example.dowmloaditems.R
-import com.example.dowmloaditems.base.GlobalConstants
 import com.example.dowmloaditems.model.DownloadResult
-import com.example.dowmloaditems.model.Item
 import io.ktor.client.HttpClient
 import io.ktor.client.call.call
 import io.ktor.client.request.url
@@ -21,10 +13,8 @@ import io.ktor.http.HttpMethod
 import io.ktor.http.contentLength
 import io.ktor.http.isSuccess
 import io.ktor.util.*
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.withContext
 import org.koin.android.BuildConfig
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext
